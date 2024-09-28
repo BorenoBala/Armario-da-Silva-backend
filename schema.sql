@@ -1,12 +1,12 @@
 CREATE TABLE equipe (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     escudo VARCHAR(255) NOT NULL
 );
 
 
 CREATE TABLE usuario (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT  PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE usuario (
 );
 
 CREATE TABLE endereco (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT  PRIMARY KEY,
     logradouro VARCHAR(100) NOT NULL,
     rua VARCHAR(100) NOT NULL,
     numero VARCHAR(10) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE endereco (
 );
 
 CREATE TABLE agendamento (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT  PRIMARY KEY,
     data_agendamento DATE NOT NULL,
     local_agendamento VARCHAR(100) NOT NULL,
     horario TIME NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE agendamento (
 );
 
 CREATE TABLE estatisticas(
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT PRIMARY KEY,
     gols INT,
     assistencias INT,
     cartao_amarelo INT,
@@ -52,15 +52,15 @@ CREATE TABLE estatisticas(
 );
 
 CREATE TABLE estatisticas_equipe(
-    id INT AUTO_INCREMENT PRIMARY KEY
+    id INT PRIMARY KEY,
     partidas INT,
     vitorias INT,
     empates INT,
     derrotas INT,
-    gols feitos INT,
-    gols sofridos INT,
-    maior assistente VARCHAR(100),
-    maior goleador VARCHAR (100),
+    gols_feitos INT,
+    gols_sofridos INT,
+    maior_assistente VARCHAR(100),
+    maior_goleador VARCHAR (100),
     cartoes_amarelos INT,
     cartoes_vermelhos INT
 );
