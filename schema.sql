@@ -35,6 +35,7 @@ CREATE TABLE agendamento (
     data_agendamento DATE NOT NULL,
     local_agendamento VARCHAR(100) NOT NULL,
     horario TIME NOT NULL,
+    valor float NOT NULL,
     usuario_id INT,
     FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
@@ -45,6 +46,21 @@ CREATE TABLE estatisticas(
     assistencias INT,
     cartao_amarelo INT,
     cartao_vermelho INT,
+    melhor_da_partida INT,
     usuario_id INT,
     FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+);
+
+CREATE TABLE estatisticas_equipe(
+    id INT AUTO_INCREMENT PRIMARY KEY
+    partidas INT,
+    vitorias INT,
+    empates INT,
+    derrotas INT,
+    gols feitos INT,
+    gols sofridos INT,
+    maior assistente VARCHAR(100),
+    maior goleador VARCHAR (100),
+    cartoes_amarelos INT,
+    cartoes_vermelhos INT
 );
