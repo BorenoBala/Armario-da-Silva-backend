@@ -6,9 +6,27 @@ CREATE TABLE equipe (
  
 );
 
+CREATE TABLE opcoesM(
+
+   
+    id INT primary KEY,
+    modalidade VARCHAR (100)
+
+);
+
+insert into opcoes (funcao) values ("Atacante"), ("Meia"), ("Lateral"), ("Zagueiro"), ("Goleiro") ("fixo"), ("pivô"), ("ala");
+
+CREATE TABLE opcoesF(
+
+    id int primary KEY,
+    funcao VARCHAR (100)
+
+);
+
+insert into opcoes (modalidade) values ("F"), ("7"), ("C"), ("S");
 
 CREATE TABLE usuario (
-    id INT  PRIMARY KEY,
+    id INT  PRIMARY KEY, 
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
