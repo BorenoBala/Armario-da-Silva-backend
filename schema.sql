@@ -1,7 +1,9 @@
 CREATE TABLE equipe (
+
     id INT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     escudo VARCHAR(255) NOT NULL
+ 
 );
 
 
@@ -18,6 +20,7 @@ CREATE TABLE usuario (
 );
 
 CREATE TABLE endereco (
+
     id INT  PRIMARY KEY,
     logradouro VARCHAR(100) NOT NULL,
     rua VARCHAR(100) NOT NULL,
