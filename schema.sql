@@ -1,26 +1,19 @@
 CREATE TABLE equipe (
-
     id INT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     escudo VARCHAR(255) NOT NULL
- 
 );
 
 CREATE TABLE opcoesM(
-
-   
     id INT primary KEY,
     modalidade VARCHAR (100)
-
 );
 
 insert into opcoes (funcao) values ("Atacante"), ("Meia"), ("Lateral"), ("Zagueiro"), ("Goleiro") ("fixo"), ("pivô"), ("ala");
 
 CREATE TABLE opcoesF(
-
     id int primary KEY,
     funcao VARCHAR (100)
-
 );
 
 insert into opcoes (modalidade) values ("F"), ("7"), ("C"), ("S");
@@ -38,7 +31,6 @@ CREATE TABLE usuario (
 );
 
 CREATE TABLE endereco (
-
     id INT  PRIMARY KEY,
     logradouro VARCHAR(100) NOT NULL,
     rua VARCHAR(100) NOT NULL,
