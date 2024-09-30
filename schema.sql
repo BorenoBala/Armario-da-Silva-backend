@@ -1,9 +1,9 @@
 CREATE TABLE equipe (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR (100) not null,
-    escudo VARCHAR (255) not null,
+    escudo VARCHAR (255) not null
 
-)
+);
 
 
 CREATE TABLE usuario (
@@ -28,7 +28,7 @@ CREATE TABLE endereco (
     cidade VARCHAR(100) not null,
     estado VARCHAR(50) not null,
     cep VARCHAR(10) not null,
-    enderecoID INT
+    enderecoID INT,
     FOREIGN KEY (enderecoID) references usuario(endereco)
 );
 
