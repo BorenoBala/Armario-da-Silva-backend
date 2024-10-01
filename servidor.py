@@ -3,7 +3,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'sua_senha'
 app.config['MYSQL_DB'] = 'meu_banco_de_dados'
 
-@app.route('/cadastro', methods=['GET', 'POST'])
+@app.route('/tela_cadastro', methods=['GET', 'POST'])
 def cadastro():
     if request.method == 'POST':
         nome = request.form['nome']
@@ -13,14 +13,14 @@ def cadastro():
         endereco = request.form ['endereco']
         data_nascimento = request.form ['data_nascimento']
         cursor = mysql.connection.cursor()
-        cursor.execute("INSERT INTO usuarios (nome, email, senha, cpf, endereco, data_nascimento) VALUES (%s, %s, %s)", (nome, email, senha, cpf, endereco, data_nascimento))
+        cursor.execute("INSERT INTO usuario (nome, email, senha, cpf, endereco, data_nascimento) VALUES (%s, %s, %s)", (nome, email, senha, cpf, endereco, data_nascimento))
         mysql.connection.commit()
         cursor.close()
         return redirect(url_for('list_users'))
-    return render_template('cadastro.html')
+    return render_template('tela_inicio.html')
 
    
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/tela_entrar', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
@@ -30,14 +30,14 @@ def login():
         user = cursor.fetchone()
         cursor.close()
         if user:
-            return redirect(url_for('home'))
+            return redirect(url_for('tela_inicio'))
         else:
             return "Usuário ou senha inválidos!"
-    return render_template('login.html')
+    return render_template('tela_entrar.html')
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('tela_inicio.html')
 
 @app.route('/esqueci_senha', methos=['get', 'post'])
 def esqueci_senha():
