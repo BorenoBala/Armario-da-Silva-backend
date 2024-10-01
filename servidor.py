@@ -36,7 +36,7 @@ def login():
     return render_template('tela_entrar.html')
 
 @app.route('/tela_entar')
-def home():
+def inicio():
     return render_template('tela_inicio.html')
 
 @app.route('/esqueci_senha', methos=['get', 'post'])
