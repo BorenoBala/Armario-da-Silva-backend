@@ -35,7 +35,7 @@ def login():
             return "Usuário ou senha inválidos!"
     return render_template('tela_entrar.html')
 
-@app.route('/')
+@app.route('/tela_entar')
 def home():
     return render_template('tela_inicio.html')
 
