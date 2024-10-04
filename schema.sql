@@ -5,28 +5,22 @@ CREATE TABLE equipe (
     categoria VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE usuario (
-    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    escudo VARCHAR(255) NOT NULL
-);
-
 CREATE TABLE opcoesM(
-    id INT primary KEY,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     modalidade VARCHAR (100)
 );
 
-insert into opcoes (funcao) values ("Atacante"), ("Meia"), ("Lateral"), ("Zagueiro"), ("Goleiro") ("fixo"), ("pivo"), ("ala");
+INSERT INTO opcoesM (modalidade) VALUES ("F"), ("7"), ("C"), ("S");
 
 CREATE TABLE opcoesF(
     id int primary KEY,
     funcao VARCHAR (100)
 );
 
-insert into opcoes (modalidade) values ("F"), ("7"), ("C"), ("S");
+INSERT INTO opcoesF (funcao) VALUES ("Atacante"), ("Meia"), ("Lateral"), ("Zagueiro"), ("Goleiro") ("Fxo"), ("Pivô"), ("Ala");
 
 CREATE TABLE usuario (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
@@ -34,7 +28,7 @@ CREATE TABLE usuario (
     endereco VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
     equipe_id INT,
-    FOREIGN KEY (equipe_id) references equipe(id),
+    FOREIGN KEY (equipe_id) references equipe(id)
 );
 
 CREATE TABLE juiz (
@@ -43,7 +37,7 @@ CREATE TABLE juiz (
     FOREIGN KEY (usuario_id) references usuario(id)
 );
 
-CREATE TABLE endereco 
+CREATE TABLE endereco (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     logradouro VARCHAR(100) NOT NULL,
     rua VARCHAR(100) NOT NULL,
