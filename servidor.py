@@ -108,7 +108,7 @@ def recuperacao():
 
         link_recuperacao = url_for('resetar_senha', token=token, external=True)
 
-        msg = Message('Recuperação de senha' 
+        msg = Message('Recuperação de senha',
                         recipments=[email])
         msg.body = f'Para redefinir a senha da sua conta, clieque aqui{link_recupercao}'
         mail.send(msg)
