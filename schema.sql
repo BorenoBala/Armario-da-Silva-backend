@@ -1,15 +1,9 @@
 CREATE TABLE equipe (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    nome VARCHAR (100) not null,
-    escudo VARCHAR (255) not null
-
-    id INT NOT NULL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    escudo VARCHAR(255) NOT NULL
-
- 
+    nome VARCHAR (100) NOT NULL,
+    escudo VARCHAR (255) NOT NULL,
+    categoria VARCHAR(50) NOT NULL
 );
-
 
 CREATE TABLE usuario (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -20,22 +14,18 @@ CREATE TABLE usuario (
     endereco VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
     equipe_id INT,
-    FOREIGN KEY (equipe_id) references equipe(id)
-    
-    id INT NOT NULL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    senha VARCHAR(100) NOT NULL,
-    cpf VARCHAR(20) NOT NULL,
-    endereco VARCHAR(100) NOT NULL UNIQUE,  
-    data_nascimento DATE NOT NULL,
-    time_id INT,
-    FOREIGN KEY (time_id) REFERENCES equipe(id)
+    FOREIGN KEY (equipe_id) references equipe(id),
+);
+
+CREATE TABLE juiz (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    FOREIGN KEY (usuario_id) references usuario(id)
 );
 
 CREATE TABLE endereco (
 
-    id INT NOT NULL PRIMARY KEY,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     logradouro VARCHAR(100) NOT NULL,
     rua VARCHAR(100) NOT NULL,
     numero VARCHAR(10) NOT NULL,
@@ -48,7 +38,7 @@ CREATE TABLE endereco (
 );
 
 CREATE TABLE agendamento (
-    id INT NOT NULL PRIMARY KEY,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     data_agendamento DATE NOT NULL,
     local_agendamento VARCHAR(100) NOT NULL,
     horario TIME NOT NULL,
@@ -58,7 +48,7 @@ CREATE TABLE agendamento (
 );
 
 CREATE TABLE estatisticas(
-    id INT NOT NULL PRIMARY KEY,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     partidas INT,
     vitorias INT,
     empates INT,
@@ -73,7 +63,7 @@ CREATE TABLE estatisticas(
 );
 
 CREATE TABLE estatisticas_equipe(
-    id INT NOT NULL PRIMARY KEY,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     partidas INT,
     vitorias INT,
     empates INT,
