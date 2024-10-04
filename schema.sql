@@ -1,9 +1,22 @@
 CREATE TABLE equipe (
-    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    nome VARCHAR (100) NOT NULL,
-    escudo VARCHAR (255) NOT NULL,
-    categoria VARCHAR(50) NOT NULL
+    id INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    escudo VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE opcoesT(
+    id int primary KEY,
+    funcao VARCHAR (100)
+);
+
+insert into opcoesT (modalidade) values ("F"), ("7"), ("C"), ("S");
+
+CREATE TABLE opcoesF(
+    id INT primary KEY,
+    modalidade VARCHAR (100)
+);
+
+insert into opcoesF (funcao) values ("Atacante"), ("Meia"), ("Lateral"), ("Zagueiro"), ("Goleiro") ("fixo"), ("pivo"), ("ala");
 
 CREATE TABLE usuario (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -24,7 +37,6 @@ CREATE TABLE juiz (
 );
 
 CREATE TABLE endereco (
-
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     logradouro VARCHAR(100) NOT NULL,
     rua VARCHAR(100) NOT NULL,
