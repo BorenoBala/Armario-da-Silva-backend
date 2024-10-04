@@ -9,14 +9,14 @@ CREATE TABLE opcoesM(
     modalidade VARCHAR (100)
 );
 
-insert into opcoes (funcao) values ("Atacante"), ("Meia"), ("Lateral"), ("Zagueiro"), ("Goleiro") ("fixo"), ("pivo"), ("ala");
+insert into opcoesF (funcao) values ("Atacante"), ("Meia"), ("Lateral"), ("Zagueiro"), ("Goleiro") ("fixo"), ("pivo"), ("ala");
 
 CREATE TABLE opcoesF(
     id int primary KEY,
     funcao VARCHAR (100)
 );
 
-insert into opcoes (modalidade) values ("F"), ("7"), ("C"), ("S");
+insert into opcoesM (modalidade) values ("F"), ("7"), ("C"), ("S");
 
 CREATE TABLE usuario (
     id INT  PRIMARY KEY, 
