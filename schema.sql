@@ -4,19 +4,19 @@ CREATE TABLE equipe (
     escudo VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE opcoesM(
+CREATE TABLE opcoesT(
+    id int primary KEY,
+    funcao VARCHAR (100)
+);
+
+insert into opcoesT (modalidade) values ("F"), ("7"), ("C"), ("S");
+
+CREATE TABLE opcoesF(
     id INT primary KEY,
     modalidade VARCHAR (100)
 );
 
 insert into opcoesF (funcao) values ("Atacante"), ("Meia"), ("Lateral"), ("Zagueiro"), ("Goleiro") ("fixo"), ("pivo"), ("ala");
-
-CREATE TABLE opcoesF(
-    id int primary KEY,
-    funcao VARCHAR (100)
-);
-
-insert into opcoesM (modalidade) values ("F"), ("7"), ("C"), ("S");
 
 CREATE TABLE usuario (
     id INT  PRIMARY KEY, 
