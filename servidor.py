@@ -68,10 +68,10 @@ def esqueci_senha():
         from werkzeug.security import generate_password_hash
         senha_hash = generate_password_hash(nova_senha)
 
-        cursor = mysql.connection.cursor ()
+        cursor = mysql.connection.cursor()
 
         cursor.execute("UPDATE usuarios SET senta=%s WHERE email=%s", (senha_hash, email))
-        mysql.connection.commit ()
+        mysql.connection.commit()
 
         cursor.close()
         return "senha atualizada!"
@@ -86,13 +86,11 @@ def criar_token(email):
 
 def verificar_token(token, expiration=10000):
     s = URLSafeTimeSerializer(app.config[''])
-   
-try:
+    try:
         email = s.load(token, salt='recuperação de senha', max_age=expiration)
-    
-except: 
+    except: 
         return False
-        return email
+        printf({email})
 
 @app.route('/recuperacao', methods=['get', 'post'])
 def recuperacao():
@@ -106,7 +104,7 @@ def recuperacao():
     if not usuario:
         return "Usuário não encontrado", 404
 
-        tolken = criar_token(email)
+        token = criar_token(email)
 
         link_recuperacao = url_for('resetar_senha', token=token, external=True)
 
